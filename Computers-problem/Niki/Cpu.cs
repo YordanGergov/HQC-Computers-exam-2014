@@ -78,12 +78,8 @@ namespace Computers.UI.Console
         }
     }
 
-    internal class Laptop
+    internal class ComputerBuildingSystem
     {
-        private static void Main()
-        {
-            ComputersFactory computers = new ComputersFactory();
-            ComputersFactory.CreateComputer();
-        }
+       
     }
 }
