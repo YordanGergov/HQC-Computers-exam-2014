@@ -1,12 +1,15 @@
 ﻿namespace Computers.UI.Console
 {
-
     using System;
     using System.Collections.Generic;
 
+     public static void Main()
+        {
+            ComputersFactory computers = new ComputersFactory();
+            ComputersFactory.CreateComputer();
+        }
     internal class ComputersFactory
     {
-   
         private static Computer pc, laptop, server;
 
         public static void CreateComputer()
@@ -38,10 +41,10 @@
                         IsMonochrome
                             = false
                     };
-                    var ram1 = new Ram(8/2);
+                    var ram1 = new Ram(4);
                     laptop = new Computer(
                         Type.LAPTOP,
-                        new Cpu(8/4, 64, ram1, card),
+                        new Cpu(2, 64, ram1, card),
                         ram1,
                         new[]
                         {
@@ -56,9 +59,9 @@
             {
                 var ram = new Ram(8);
                 var videoCard = new HardDrive {IsMonochrome = false};
-                pc = new Computer(Type.PC, new Cpu(8/2, 64, ram, videoCard), ram,
+                pc = new Computer(Type.PC, new Cpu(4, 64, ram, videoCard), ram,
                     new[] {new HardDrive(1000, false, 0)}, videoCard, null);
-                var ram1 = new Ram(8*8);
+                var ram1 = new Ram(64);
                 var card = new HardDrive();
                 server = new Computer(Type.SERVER,
                     new Cpu(8, 64, ram1, card),
@@ -71,9 +74,9 @@
                 var ram2 = new Ram(8);
                 var videoCard1 = new HardDrive {IsMonochrome = false};
                 laptop = new Computer(Type.LAPTOP,
-                    new Cpu(8/2, ((32)), ram2, videoCard1),
+                    new Cpu(4, ((32)), ram2, videoCard1),
                     ram2,
-                    new[] {new HardDrive(1000, false, 0)},
+                    new[]{new HardDrive(1000, false, 0)},
                     videoCard1,
                     new LaptopBattery());
             }
@@ -124,9 +127,7 @@
                 }
             }
         }
-
        
-
         public class InvalidArgumentException : ArgumentException
         {
             public InvalidArgumentException(string message) : base(message)
@@ -135,4 +136,5 @@
         }
     }
 
+}
 }

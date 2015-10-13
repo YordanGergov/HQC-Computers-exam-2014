@@ -6,6 +6,8 @@ namespace Computers.UI.Console
     {
         private readonly byte numberOfBits;
 
+        private readonly byte numberOfCores;
+
         private readonly Ram ram;
 
         private readonly HardDrive videoCard;
@@ -16,7 +18,7 @@ namespace Computers.UI.Console
         {
             this.numberOfBits = numberOfBits;
             this.ram = ram;
-            NumberOfCores = numberOfCores;
+            this.NumberOfCores = numberOfCores;
             this.videoCard = videoCard;
         }
 
@@ -80,10 +82,6 @@ namespace Computers.UI.Console
 
     internal class Laptop
     {
-        private static void Main()
-        {
-            ComputersFactory computers = new ComputersFactory();
-            ComputersFactory.CreateComputer();
-        }
+
     }
 }

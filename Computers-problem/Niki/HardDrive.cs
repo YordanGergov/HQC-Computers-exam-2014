@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
+﻿
 namespace Computers.UI.Console
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
 
     class HardDrive
     {
@@ -76,16 +76,16 @@ namespace Computers.UI.Console
         {
             if (IsMonochrome)
             {
-                System.Console.ForegroundColor = ConsoleColor.Gray;
-                System.Console.WriteLine(a);
-                System.Console.ResetColor();
+               Console.ForegroundColor = ConsoleColor.Gray;
+               Console.WriteLine(a);
+               Console.ResetColor();
             }
 
             else
             {
-                System.Console.ForegroundColor = ConsoleColor.Green;
-                System.Console.WriteLine(a);
-                System.Console.ResetColor();
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine(a);
+                Console.ResetColor();
             }
 
         }
