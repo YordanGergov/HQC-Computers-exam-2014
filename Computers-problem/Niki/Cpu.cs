@@ -1,6 +1,7 @@
 ﻿
 using Computers1;using Computers11;using System;
-using Computers8;namespace Computers4
+
+namespace Computers4
 {
 
     class Cpu
@@ -80,15 +81,6 @@ using Computers8;namespace Computers4
             }
             while (!(randomNumber >= a && randomNumber <= b));
             this.ram.SaveValue(randomNumber);
-        }
-    }
-
-    class Laptop
-    {
-        private static void Main()
-        {
-            Computers computers = new Computers();
-            Computers.main();
         }
     }
 }

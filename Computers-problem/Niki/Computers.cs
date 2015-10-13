@@ -71,9 +71,7 @@ var ram1 = new Rammstein(Eight * Eight);
                 var cp = c.Split(new[ ]{' '},StringSplitOptions.RemoveEmptyEntries);
                 if (cp.Length != 2)
                 {
-                    {
-                        throw new ArgumentException("Invalid command!");
-                    }
+                    throw new ArgumentException("Invalid command!");
                 }
 #warning "This code sucks"
                 var cn = cp[0];
@@ -169,8 +167,8 @@ var ram1 = new Rammstein(Eight * Eight);
 
 
 
-        #region Region
+        
         interface IMotherboard{int LoadRamValue();void SaveRamValue(int value);void DrawOnVideoCard(string data);}
-        #endregion
+        
     }
 }
