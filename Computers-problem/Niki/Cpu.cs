@@ -1,42 +1,60 @@
-﻿
-using Computers1;using Computers11;using System;
-using Computers8;namespace Computers4
-{
+﻿using System;
 
-    class Cpu
+namespace Computers.UI.Console
+{
+    internal class Cpu
     {
         private readonly byte numberOfBits;
 
-        private readonly Rammstein ram;
+        private readonly Ram ram;
 
-        private readonly HardDriver videoCard;
+        private readonly HardDrive videoCard;
 
-        static readonly Random Random = new Random();
+        private static readonly Random Random = new Random();
 
-        internal Cpu(byte numberOfCores, byte numberOfBits, Rammstein ram, HardDriver videoCard) {
+        internal Cpu(byte numberOfCores, byte numberOfBits, Ram ram, HardDrive videoCard)
+        {
             this.numberOfBits = numberOfBits;
             this.ram = ram;
-            this.NumberOfCores = numberOfCores;
+            NumberOfCores = numberOfCores;
+            this.videoCard = videoCard;
         }
 
-        byte NumberOfCores { get; set; }
+        private byte NumberOfCores { get; set; }
 
         public void SquareNumber()
         {
-            if (this.numberOfBits == 32) SquareNumber32();
-            if (this.numberOfBits == 64) SquareNumber64();
+            if (numberOfBits == 32) SquareNumber32();
+            if (numberOfBits == 64) SquareNumber64();
         }
 
-        void SquareNumber32()
+        private void SquareNumber32()
         {
-            var data = this.ram.LoadValue();
+            var data = ram.LoadValue();
+            if (data > 500)
+            {
+                videoCard.Draw("Number too high.");
+            }
+
+            SquareNumberCalculation(data);
+        }
+
+        private void SquareNumber64()
+        {
+            var data = ram.LoadValue();
+            if (data > 1000)
+            {
+                videoCard.Draw("Number too high.");
+            }
+
+            SquareNumberCalculation(data);
+        }
+
+        public void SquareNumberCalculation(int data)
+        {
             if (data < 0)
             {
-                this.videoCard.Draw("Number too low.");
-            }
-            else if (data > 500)
-            {
-                this.videoCard.Draw("Number too high.");
+                videoCard.Draw("Number too low.");
             }
             else
             {
@@ -45,29 +63,7 @@ using Computers8;namespace Computers4
                 {
                     value += data;
                 }
-                this.videoCard.Draw(string.Format("Square of {0} is {1}.", data, value));
-            }
-        }
-
-        void SquareNumber64()
-        {
-            var data = this.ram.LoadValue();
-            if (data < 0)
-            {
-                this.videoCard.Draw("Number too low.");
-            }
-            else if (data > 1000)
-            {
-                this.videoCard.Draw("Number too high.");
-            }
-            else
-            {
-                int value = 0;
-                for (int i = 0; i < data; i++)
-                {
-                    value += data;
-                }
-                this.videoCard.Draw(string.Format("Square of {0} is {1}.", data, value));
+                videoCard.Draw(string.Format("Square of {0} is {1}.", data, value));
             }
         }
 
@@ -77,18 +73,17 @@ using Computers8;namespace Computers4
             do
             {
                 randomNumber = Random.Next(0, 1000);
-            }
-            while (!(randomNumber >= a && randomNumber <= b));
-            this.ram.SaveValue(randomNumber);
+            } while (!(randomNumber >= a && randomNumber <= b));
+            ram.SaveValue(randomNumber);
         }
     }
 
-    class Laptop
+    internal class Laptop
     {
         private static void Main()
         {
-            Computers computers = new Computers();
-            Computers.main();
+            ComputersFactory computers = new ComputersFactory();
+            ComputersFactory.CreateComputer();
         }
     }
 }

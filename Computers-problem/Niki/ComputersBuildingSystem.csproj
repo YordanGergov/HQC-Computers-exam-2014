@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -43,15 +44,21 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Type.cs" />
+    <Compile Include="Computer.cs" />
     <Compile Include="Cpu.cs" />
-    <Compile Include="HardDriver.cs" />
+    <Compile Include="HardDrive.cs" />
+    <Compile Include="IMotherboard.cs" />
     <Compile Include="LaptopBattery.cs" />
-    <Compile Include="Rammstein.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Ram.cs" />
+    <Compile Include="Program.cs">
+      <ExcludeFromStyleCop>False</ExcludeFromStyleCop>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

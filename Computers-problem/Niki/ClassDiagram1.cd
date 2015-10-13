@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Computers.UI.Console.Cpu" Collapsed="true">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAIAAAAAAAQAAIAgAAQAAAABgQAAAAAAAAgAAA=</HashCode>
+      <FileName>Cpu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Computers.UI.Console.Laptop" Collapsed="true">
+    <Position X="0.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Cpu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Computers.UI.Console.HardDrive" Collapsed="true">
+    <Position X="4.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAARAiAAAAIAAAASAAAAAAAAAAAQAAAABAg=</HashCode>
+      <FileName>HardDrive.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Computers.UI.Console.LaptopBattery" Collapsed="true">
+    <Position X="2.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LaptopBattery.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Computers.UI.Console.ComputersFactory" Collapsed="true">
+    <Position X="0.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAEAEAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Computers.UI.Console.Ram" Collapsed="true">
+    <Position X="4.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAACAAAAAACAAAAAAAAAABAA=</HashCode>
+      <FileName>Ram.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Computers.UI.Console.IMotherboard" Collapsed="true">
+    <Position X="0.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>IMotherboard.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
