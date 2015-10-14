@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Computers.UI.Console
 {
-    interface IComputersFactory
+    public interface IComputersFactory
     {
+
     }
 }

@@ -1,14 +1,25 @@
 ﻿namespace Computers.UI.Console
 {
-    class LaptopBattery
+    public class LaptopBattery
     {
-        internal int Percentage { get; set; }
-        internal void Charge(int p)
+        private const int InitialPercentage = 50;
+        public LaptopBattery()
         {
-            Percentage += p;
-            if (Percentage > 100) Percentage = 100;
-            if (Percentage < 0) Percentage = 0;
+            CurrentChargePercentage = InitialPercentage;
         }
-        internal LaptopBattery() { Percentage = 100 / 2; }
+        public int CurrentChargePercentage { get; set; }
+
+        public void Charge(int chargePercentage)
+        {
+            CurrentChargePercentage += chargePercentage;
+            if (CurrentChargePercentage > 100)
+            {
+                CurrentChargePercentage = 100;
+            }
+            if (CurrentChargePercentage < 0)
+            {
+                CurrentChargePercentage = 0;
+            }
+        }
     }
 }

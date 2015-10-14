@@ -44,8 +44,10 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ComputersFactory.cs" />
-    <Compile Include="Type.cs" />
+    <Compile Include="ComputerFactory.cs" />
+    <Compile Include="AbstractComputersFactory.cs" />
+    <Compile Include="IComputersFactory.cs" />
+    <Compile Include="ComputerType.cs" />
     <Compile Include="Computer.cs" />
     <Compile Include="Cpu.cs" />
     <Compile Include="HardDrive.cs" />

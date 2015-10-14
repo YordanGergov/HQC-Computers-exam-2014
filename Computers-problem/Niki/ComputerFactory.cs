@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-
-
-namespace Computers.UI.Console
+﻿namespace Computers.UI.Console
 {
     using System;
     using System.Collections.Generic;
 
-    internal class ComputersFactory : IComputersFactory
+    internal class ComputersFactory
     {
 
         private static Computer pc, laptop, server;
@@ -19,13 +15,13 @@ namespace Computers.UI.Console
             {
                 var ram = new Ram(2);
                 var videoCard = new HardDrive { IsMonochrome = false };
-                pc = new Computer(Type.PC, new Cpu(2, 32, ram, videoCard), ram,
+                pc = new Computer(ComputerType.PC, new Cpu(2, 32, ram, videoCard), ram,
                     new[] { new HardDrive(500, false, 0) }, videoCard, null);
 
                 var serverRam = new Ram(32);
                 var serverVideo = new HardDrive();
                 server = new Computer(
-                    Type.SERVER,
+                    ComputerType.SERVER,
                     new Cpu(2,
                         32, serverRam, serverVideo),
                     serverRam,
@@ -43,7 +39,7 @@ namespace Computers.UI.Console
                     };
                     var ram1 = new Ram(8 / 2);
                     laptop = new Computer(
-                        Type.LAPTOP,
+                        ComputerType.LAPTOP,
                         new Cpu(8 / 4, 64, ram1, card),
                         ram1,
                         new[]
@@ -59,11 +55,11 @@ namespace Computers.UI.Console
             {
                 var ram = new Ram(8);
                 var videoCard = new HardDrive { IsMonochrome = false };
-                pc = new Computer(Type.PC, new Cpu(8 / 2, 64, ram, videoCard), ram,
+                pc = new Computer(ComputerType.PC, new Cpu(8 / 2, 64, ram, videoCard), ram,
                     new[] { new HardDrive(1000, false, 0) }, videoCard, null);
                 var ram1 = new Ram(8 * 8);
                 var card = new HardDrive();
-                server = new Computer(Type.SERVER,
+                server = new Computer(ComputerType.SERVER,
                     new Cpu(8, 64, ram1, card),
                     ram1,
                     new List<HardDrive>
@@ -73,7 +69,7 @@ namespace Computers.UI.Console
                     }, card, null);
                 var ram2 = new Ram(8);
                 var videoCard1 = new HardDrive { IsMonochrome = false };
-                laptop = new Computer(Type.LAPTOP,
+                laptop = new Computer(ComputerType.LAPTOP,
                     new Cpu(8 / 2, ((32)), ram2, videoCard1),
                     ram2,
                     new[] { new HardDrive(1000, false, 0) },

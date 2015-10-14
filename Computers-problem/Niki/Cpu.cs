@@ -16,7 +16,7 @@ namespace Computers.UI.Console
         {
             this.numberOfBits = numberOfBits;
             this.ram = ram;
-            NumberOfCores = numberOfCores;
+            this.NumberOfCores = numberOfCores;
             this.videoCard = videoCard;
         }
 
@@ -24,8 +24,14 @@ namespace Computers.UI.Console
 
         public void SquareNumber()
         {
-            if (numberOfBits == 32) SquareNumber32();
-            if (numberOfBits == 64) SquareNumber64();
+            if (numberOfBits == 32)
+            {
+                this.SquareNumber32();
+            }
+            if (numberOfBits == 64)
+            {
+                this.SquareNumber64();
+            }
         }
 
         private void SquareNumber32()
@@ -34,6 +40,7 @@ namespace Computers.UI.Console
             if (data > 500)
             {
                 videoCard.Draw("Number too high.");
+                return;
             }
 
             SquareNumberCalculation(data);
@@ -45,6 +52,7 @@ namespace Computers.UI.Console
             if (data > 1000)
             {
                 videoCard.Draw("Number too high.");
+                return;
             }
 
             SquareNumberCalculation(data);
@@ -58,16 +66,12 @@ namespace Computers.UI.Console
             }
             else
             {
-                int value = 0;
-                for (int i = 0; i < data; i++)
-                {
-                    value += data;
-                }
-                videoCard.Draw(string.Format("Square of {0} is {1}.", data, value));
+                int result = (int)Math.Pow(data, 2);             
+                videoCard.Draw(string.Format("Square of {0} is {1}.", data, result));
             }
         }
 
-        internal void rand(int a, int b)
+        internal void Rand(int a, int b)
         {
             int randomNumber;
             do
@@ -78,8 +82,5 @@ namespace Computers.UI.Console
         }
     }
 
-    internal class ComputerBuildingSystem
-    {
-       
-    }
+   
 }

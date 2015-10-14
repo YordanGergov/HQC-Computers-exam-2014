@@ -1,0 +1,7 @@
+D:\Istensko programirane\Bash Istensko Programirane KPK\Computers-exam 2014\HQC-Computers-exam-2014\Computers-problem\UnitTestProject1\obj\Debug\ComputersBuildingSystem.Tests.csprojResolveAssemblyReference.cache
+D:\Istensko programirane\Bash Istensko Programirane KPK\Computers-exam 2014\HQC-Computers-exam-2014\Computers-problem\UnitTestProject1\bin\Debug\UnitTestProject1.dll
+D:\Istensko programirane\Bash Istensko Programirane KPK\Computers-exam 2014\HQC-Computers-exam-2014\Computers-problem\UnitTestProject1\bin\Debug\UnitTestProject1.pdb
+D:\Istensko programirane\Bash Istensko Programirane KPK\Computers-exam 2014\HQC-Computers-exam-2014\Computers-problem\UnitTestProject1\bin\Debug\Computers.UI.Console.exe
+D:\Istensko programirane\Bash Istensko Programirane KPK\Computers-exam 2014\HQC-Computers-exam-2014\Computers-problem\UnitTestProject1\bin\Debug\Computers.UI.Console.pdb
+D:\Istensko programirane\Bash Istensko Programirane KPK\Computers-exam 2014\HQC-Computers-exam-2014\Computers-problem\UnitTestProject1\obj\Debug\UnitTestProject1.dll
+D:\Istensko programirane\Bash Istensko Programirane KPK\Computers-exam 2014\HQC-Computers-exam-2014\Computers-problem\UnitTestProject1\obj\Debug\UnitTestProject1.pdb

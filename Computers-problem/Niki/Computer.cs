@@ -8,7 +8,7 @@ namespace Computers.UI.Console
     {
         private readonly LaptopBattery battery;
 
-        internal Computer(Type type, Cpu cpu, Ram ram, IEnumerable<HardDrive> hardDrives,
+        internal Computer(ComputerType type, Cpu cpu, Ram ram, IEnumerable<HardDrive> hardDrives,
             HardDrive videoCard, LaptopBattery battery)
         {
             Cpu = cpu;
@@ -16,10 +16,10 @@ namespace Computers.UI.Console
             HardDrives = hardDrives;
             VideoCard = videoCard;
             if (type !=
-                Type.LAPTOP
+                ComputerType.LAPTOP
                 && type
                 !=
-                Type.PC)
+                ComputerType.PC)
             {
                 VideoCard.IsMonochrome = true;
             }
@@ -39,12 +39,12 @@ namespace Computers.UI.Console
         {
             battery.Charge(percentage);
 
-            VideoCard.Draw(string.Format("Battery status: {0}", battery.Percentage));
+            VideoCard.Draw(string.Format("Battery status: {0}", battery.CurrentChargePercentage));
         }
 
         public void Play(int guessNumber)
         {
-            Cpu.rand(1, 10);
+            Cpu.Rand(1, 10);
             var number = Ram.LoadValue();
             if (number + 1 != guessNumber + 1)
             {
