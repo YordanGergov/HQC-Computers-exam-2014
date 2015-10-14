@@ -1,18 +1,19 @@
-﻿using System;
-
-namespace Computers.UI.Console
+﻿namespace Computers.UI.Console
 {
+
+    using System;
+    using Components;
+
     internal class Cpu
     {
+        private static readonly Random Random = new Random();
         private readonly byte numberOfBits;
 
         private readonly Ram ram;
 
-        private readonly HardDrive videoCard;
+        private readonly VideoCard videoCard;
 
-        private static readonly Random Random = new Random();
-
-        internal Cpu(byte numberOfCores, byte numberOfBits, Ram ram, HardDrive videoCard)
+        internal Cpu(byte numberOfCores, byte numberOfBits, Ram ram, VideoCard videoCard)
         {
             this.numberOfBits = numberOfBits;
             this.ram = ram;
@@ -24,11 +25,11 @@ namespace Computers.UI.Console
 
         public void SquareNumber()
         {
-            if (numberOfBits == 32)
+            if (this.numberOfBits == 32)
             {
                 this.SquareNumber32();
             }
-            if (numberOfBits == 64)
+            if (this.numberOfBits == 64)
             {
                 this.SquareNumber64();
             }
@@ -36,38 +37,38 @@ namespace Computers.UI.Console
 
         private void SquareNumber32()
         {
-            var data = ram.LoadValue();
+            var data = this.ram.LoadValue();
             if (data > 500)
             {
-                videoCard.Draw("Number too high.");
+                this.videoCard.Draw("Number too high.");
                 return;
             }
 
-            SquareNumberCalculation(data);
+            this.SquareNumberCalculation(data);
         }
 
         private void SquareNumber64()
         {
-            var data = ram.LoadValue();
+            var data = this.ram.LoadValue();
             if (data > 1000)
             {
-                videoCard.Draw("Number too high.");
+                this.videoCard.Draw("Number too high.");
                 return;
             }
 
-            SquareNumberCalculation(data);
+            this.SquareNumberCalculation(data);
         }
 
         public void SquareNumberCalculation(int data)
         {
             if (data < 0)
             {
-                videoCard.Draw("Number too low.");
+                this.videoCard.Draw("Number too low.");
             }
             else
             {
-                int result = (int)Math.Pow(data, 2);             
-                videoCard.Draw(string.Format("Square of {0} is {1}.", data, result));
+                var result = (int) Math.Pow(data, 2);
+                this.videoCard.Draw(string.Format("Square of {0} is {1}.", data, result));
             }
         }
 
@@ -77,10 +78,10 @@ namespace Computers.UI.Console
             do
             {
                 randomNumber = Random.Next(0, 1000);
-            } while (!(randomNumber >= a && randomNumber <= b));
-            ram.SaveValue(randomNumber);
+            }
+            while (!(randomNumber >= a && randomNumber <= b));
+            this.ram.SaveValue(randomNumber);
         }
     }
 
-   
 }

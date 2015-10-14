@@ -1,11 +1,11 @@
 ﻿namespace Computers.UI.Console
 {
+
     using System;
     using System.Collections.Generic;
 
     internal class ComputersFactory
     {
-
         private static Computer pc, laptop, server;
 
         public static void CreateComputer()
@@ -14,9 +14,9 @@
             if (manufacturer == "HP")
             {
                 var ram = new Ram(2);
-                var videoCard = new HardDrive { IsMonochrome = false };
+                var videoCard = new HardDrive {IsMonochrome = false};
                 pc = new Computer(ComputerType.PC, new Cpu(2, 32, ram, videoCard), ram,
-                    new[] { new HardDrive(500, false, 0) }, videoCard, null);
+                    new[] {new HardDrive(500, false, 0)}, videoCard, null);
 
                 var serverRam = new Ram(32);
                 var serverVideo = new HardDrive();
@@ -37,10 +37,10 @@
                         IsMonochrome
                             = false
                     };
-                    var ram1 = new Ram(8 / 2);
+                    var ram1 = new Ram(8/2);
                     laptop = new Computer(
                         ComputerType.LAPTOP,
-                        new Cpu(8 / 4, 64, ram1, card),
+                        new Cpu(8/4, 64, ram1, card),
                         ram1,
                         new[]
                         {
@@ -54,10 +54,10 @@
             else if (manufacturer == "Dell")
             {
                 var ram = new Ram(8);
-                var videoCard = new HardDrive { IsMonochrome = false };
-                pc = new Computer(ComputerType.PC, new Cpu(8 / 2, 64, ram, videoCard), ram,
-                    new[] { new HardDrive(1000, false, 0) }, videoCard, null);
-                var ram1 = new Ram(8 * 8);
+                var videoCard = new HardDrive {IsMonochrome = false};
+                pc = new Computer(ComputerType.PC, new Cpu(8/2, 64, ram, videoCard), ram,
+                    new[] {new HardDrive(1000, false, 0)}, videoCard, null);
+                var ram1 = new Ram(8*8);
                 var card = new HardDrive();
                 server = new Computer(ComputerType.SERVER,
                     new Cpu(8, 64, ram1, card),
@@ -68,11 +68,11 @@
                             new List<HardDrive> {new HardDrive(2000, false, 0), new HardDrive(2000, false, 0)})
                     }, card, null);
                 var ram2 = new Ram(8);
-                var videoCard1 = new HardDrive { IsMonochrome = false };
+                var videoCard1 = new HardDrive {IsMonochrome = false};
                 laptop = new Computer(ComputerType.LAPTOP,
-                    new Cpu(8 / 2, ((32)), ram2, videoCard1),
+                    new Cpu(8/2, ((32)), ram2, videoCard1),
                     ram2,
-                    new[] { new HardDrive(1000, false, 0) },
+                    new[] {new HardDrive(1000, false, 0)},
                     videoCard1,
                     new LaptopBattery());
             }
@@ -94,7 +94,7 @@
                     return;
                 }
 
-                var cp = command.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                var cp = command.Split(new[] {' '}, StringSplitOptions.RemoveEmptyEntries);
                 if (cp.Length != 2)
                 {
                     {
@@ -124,8 +124,6 @@
             }
         }
 
-
-
         public class InvalidArgumentException : ArgumentException
         {
             public InvalidArgumentException(string message)
@@ -134,4 +132,5 @@
             }
         }
     }
+
 }

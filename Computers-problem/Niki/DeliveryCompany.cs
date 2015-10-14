@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace Computers.UI.Console
 {
-
-    public abstract class AbstractComputersFactory
+    public class DeliveryCompany
     {
-
-
     }
 }

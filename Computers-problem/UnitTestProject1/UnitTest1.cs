@@ -1,8 +1,8 @@
 ﻿namespace UnitTestProject1
 {
     using System;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Computers.UI.Console;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     [TestClass]
     public class ComputersBuildingSystemTests
