@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Computers.UI.Console.Components;
+using System;
 
 namespace Computers.UI.Console
 {
@@ -8,11 +9,11 @@ namespace Computers.UI.Console
 
         private readonly Ram ram;
 
-        private readonly HardDrive videoCard;
+        private readonly VideoCard videoCard;
 
         private static readonly Random Random = new Random();
 
-        internal Cpu(byte numberOfCores, byte numberOfBits, Ram ram, HardDrive videoCard)
+        internal Cpu(byte numberOfCores, byte numberOfBits, Ram ram, VideoCard videoCard)
         {
             this.numberOfBits = numberOfBits;
             this.ram = ram;
@@ -77,7 +78,8 @@ namespace Computers.UI.Console
             do
             {
                 randomNumber = Random.Next(0, 1000);
-            } while (!(randomNumber >= a && randomNumber <= b));
+            } 
+            while (!(randomNumber >= a && randomNumber <= b));
             ram.SaveValue(randomNumber);
         }
     }

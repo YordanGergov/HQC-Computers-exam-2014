@@ -1,13 +1,12 @@
-﻿namespace Computers.UI.Console
+﻿using Computers.UI.Console.Computers;
+namespace Computers.UI.Console
 {
     public class ComputerBuilding
     {
           private static void Main()
         {
-            ComputersFactory computers = new ComputersFactory();
-            ComputersFactory.CreateComputer();
+            var HPcomputers = new HpFactory();
+            var Dellcomputers = new DellFactory();
         }
     }
-
-
 }

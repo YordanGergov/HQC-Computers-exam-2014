@@ -32,11 +32,14 @@
         }
 
         [TestMethod]
-        public void TestMethod1()
+        public void TestOver100()
         {
             var laptopBattery = new LaptopBattery();
             laptopBattery.Charge(60);
             Assert.AreEqual(100, laptopBattery.CurrentChargePercentage);
         }
+
+
+
     }
 }
