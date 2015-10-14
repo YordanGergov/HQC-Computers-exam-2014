@@ -6,61 +6,60 @@
     internal class ComputersFactory
     {
 
-        private static AbstractComputer Pc, Laptop, Server;
+        private static Computer pc, laptop, server;
 
         public static void CreateComputer()
         {
             var manufacturer = Console.ReadLine();
             if (manufacturer == "HP")
             {
-                return HpFactory;
-                //var ram = new Ram(2);
-                //var videoCard = new HardDrive { IsMonochrome = false };
-                //pc = new Computer(ComputerType.PC, new Cpu(2, 32, ram, videoCard), ram,
-                //    new[] { new HardDrive(500, false, 0) }, videoCard, null);
+                var ram = new Ram(2);
+                var videoCard = new HardDrive { IsMonochrome = false };
+                pc = new Computer(ComputerType.PC, new Cpu(2, 32, ram, videoCard), ram,
+                    new[] { new HardDrive(500, false, 0) }, videoCard, null);
 
-                //var serverRam = new Ram(32);
-                //var serverVideo = new HardDrive();
-                //server = new Computer(
-                //    ComputerType.SERVER,
-                //    new Cpu(2,
-                //        32, serverRam, serverVideo),
-                //    serverRam,
-                //    new List<HardDrive>
-                //    {
-                //        new HardDrive(0, true, 2,
-                //            new List<HardDrive> {new HardDrive(1000, false, 0), new HardDrive(1000, false, 0)})
-                //    },
-                //    serverVideo, null);
-                //{
-                //    var card = new HardDrive
-                //    {
-                //        IsMonochrome
-                //            = false
-                //    };
-                //    var ram1 = new Ram(8 / 2);
-                //    laptop = new Computer(
-                //        ComputerType.LAPTOP,
-                //        new Cpu(8 / 4, 64, ram1, card),
-                //        ram1,
-                //        new[]
-                //        {
-                //            new HardDrive(500,
-                //                false, 0)
-                //        },
-                //        card,
-                //        new LaptopBattery());
-                //}
+                var serverRam = new Ram(32);
+                var serverVideo = new HardDrive();
+                server = new Computer(
+                    ComputerType.SERVER,
+                    new Cpu(2,
+                        32, serverRam, serverVideo),
+                    serverRam,
+                    new List<HardDrive>
+                    {
+                        new HardDrive(0, true, 2,
+                            new List<HardDrive> {new HardDrive(1000, false, 0), new HardDrive(1000, false, 0)})
+                    },
+                    serverVideo, null);
+                {
+                    var card = new HardDrive
+                    {
+                        IsMonochrome
+                            = false
+                    };
+                    var ram1 = new Ram(8 / 2);
+                    laptop = new Computer(
+                        ComputerType.LAPTOP,
+                        new Cpu(8 / 4, 64, ram1, card),
+                        ram1,
+                        new[]
+                        {
+                            new HardDrive(500,
+                                false, 0)
+                        },
+                        card,
+                        new LaptopBattery());
+                }
             }
             else if (manufacturer == "Dell")
             {
                 var ram = new Ram(8);
                 var videoCard = new HardDrive { IsMonochrome = false };
-                Pc = new AbstractComputer(ComputerType.PC, new Cpu(8 / 2, 64, ram, videoCard), ram,
+                pc = new Computer(ComputerType.PC, new Cpu(8 / 2, 64, ram, videoCard), ram,
                     new[] { new HardDrive(1000, false, 0) }, videoCard, null);
                 var ram1 = new Ram(8 * 8);
                 var card = new HardDrive();
-                Server = new AbstractComputer(ComputerType.SERVER,
+                server = new Computer(ComputerType.SERVER,
                     new Cpu(8, 64, ram1, card),
                     ram1,
                     new List<HardDrive>
@@ -70,7 +69,7 @@
                     }, card, null);
                 var ram2 = new Ram(8);
                 var videoCard1 = new HardDrive { IsMonochrome = false };
-                Laptop = new AbstractComputer(ComputerType.LAPTOP,
+                laptop = new Computer(ComputerType.LAPTOP,
                     new Cpu(8 / 2, ((32)), ram2, videoCard1),
                     ram2,
                     new[] { new HardDrive(1000, false, 0) },
@@ -108,15 +107,15 @@
 
                 if (cn == "Charge")
                 {
-                    Laptop.ChargeBattery(ca);
+                    laptop.ChargeBattery(ca);
                 }
                 else if (cn == "Process")
                 {
-                    Server.Process(ca);
+                    server.Process(ca);
                 }
                 else if (cn == "Play")
                 {
-                    Pc.Play(ca);
+                    pc.Play(ca);
                 }
                 else
                 {

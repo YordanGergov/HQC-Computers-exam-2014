@@ -1,21 +1,14 @@
-﻿using Computers.UI.Console.Computers;
-
+﻿
 namespace Computers.UI.Console
 {
-
-
-    using Computers.UI.Console.Components;
     using System;
     using System.Collections.Generic;
-    //using Computers.UI.Console.Computers;
-    //using Computers.UI.Console.Components;
    
-    public abstract class AbstractComputer
+    internal class Computer
     {
         private readonly LaptopBattery battery;
-       // private readonly Computers.UI.Console.Components.VideoCard videoCard;
 
-        internal AbstractComputer(ComputerType type, Cpu cpu, Ram ram, IEnumerable<HardDrive> hardDrives,
+        internal Computer(ComputerType type, Cpu cpu, Ram ram, IEnumerable<HardDrive> hardDrives,
             HardDrive videoCard, LaptopBattery battery)
         {
             Cpu = cpu;
@@ -35,12 +28,13 @@ namespace Computers.UI.Console
 
         private IEnumerable<HardDrive> HardDrives { get; set; }
 
-        //private VideoCard VideoCard { get; set; }
+        private HardDrive VideoCard { get; set; }
 
         private Cpu Cpu { get; set; }
 
         private Ram Ram { get; set; }
 
+        [Obsolete("")]
         internal void ChargeBattery(int percentage)
         {
             battery.Charge(percentage);

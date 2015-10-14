@@ -12,7 +12,7 @@ namespace Computers.UI.Console
 
         int hardDrivesInRaid;
 
-        internal HardDrive(){}
+       internal HardDrive(){}
         public bool IsMonochrome { get; set; }
 
 

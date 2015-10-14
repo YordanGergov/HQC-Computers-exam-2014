@@ -1,5 +1,5 @@
 ﻿// <copyright file="IMotherboard.cs" company="Unknown">
-// Copyright(c) 2015 Team "Unknown"
+// Copyright(c) 2015 Team "Game-Fifteen-4"
 // </copyright>
 // <summary>
 // IMotherboard interface
@@ -15,19 +15,20 @@ namespace Computers.UI.Console
         /// <summary>
         /// The method required to load a value
         /// </summary>
-        /// <returns>A int value</returns>
+        /// <returns>A string value</returns>
         int LoadRamValue();
 
-       /// <summary>
+        /// <summary>
         /// The method required to save a value
-       /// </summary>
-       /// <param name="value"type"int">The value to save to ram</param>
+        /// </summary>
+        /// <returns>A string value</returns>
+        /// 
         void SaveRamValue(int value);
 
-       /// <summary>
+        /// <summary>
         /// The method required to draw on video card
-       /// </summary>
-       /// <param name="data">The string to draw</param>
+        /// </summary>
+        /// <returns>A string value</returns>
         void DrawOnVideoCard(string data);
     }
 }
