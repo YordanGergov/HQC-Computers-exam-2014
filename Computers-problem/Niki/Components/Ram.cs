@@ -1,7 +1,7 @@
 ﻿namespace Computers.UI.Console
 {
 
-    internal class Ram
+    public class Ram
     {
         private int value;
 

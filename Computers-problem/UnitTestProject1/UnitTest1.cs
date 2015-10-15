@@ -1,6 +1,6 @@
 ﻿namespace UnitTestProject1
 {
-    using System;
+
     using Computers.UI.Console;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -34,7 +34,7 @@
         [TestMethod]
         public void TestMethod1()
         {
-            var laptopBattery = new LaptopBattery();
+            var laptopBattery = new LaptopBatteryReal();
             laptopBattery.Charge(60);
             Assert.AreEqual(100, laptopBattery.CurrentChargePercentage);
         }

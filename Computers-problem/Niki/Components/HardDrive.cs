@@ -5,15 +5,15 @@
     using System.Collections.Generic;
     using System.Linq;
 
-    internal class HardDrive
+     public class HardDrive
     {
         private readonly int capacity;
         private readonly Dictionary<int, string> data;
 
-        private int hardDrivesInRaid;
-
-        private readonly List<HardDrive> hds;
+        private readonly List<HardDrive> hardDrives;
         private readonly bool isInRaid;
+
+        private int hardDrivesInRaid;
 
         internal HardDrive()
         {
@@ -25,7 +25,7 @@
             this.hardDrivesInRaid = hardDrivesInRaid;
             this.capacity = capacity;
             this.data = new Dictionary<int, string>(capacity);
-            this.hds = new List<HardDrive>();
+            this.hardDrives = new List<HardDrive>();
         }
 
         internal HardDrive(int capacity, bool isInRaid, int hardDrivesInRaid, List<HardDrive> hardDrives)
@@ -35,8 +35,8 @@
             this.capacity = capacity;
 
             this.data = new Dictionary<int, string>(capacity);
-            this.hds = new List<HardDrive>();
-            this.hds = hardDrives;
+            this.hardDrives = new List<HardDrive>();
+            this.hardDrives = hardDrives;
         }
 
         public bool IsMonochrome { get; set; }
@@ -47,11 +47,11 @@
             {
                 if (this.isInRaid)
                 {
-                    if (!this.hds.Any())
+                    if (!this.hardDrives.Any())
                     {
                         return 0;
                     }
-                    return this.hds.First().Capacity;
+                    return this.hardDrives.First().Capacity;
                 }
                 return this.capacity;
             }
@@ -61,7 +61,7 @@
         {
             if (this.isInRaid)
             {
-                foreach (var hardDrive in this.hds)
+                foreach (var hardDrive in this.hardDrives)
                 {
                     hardDrive.SaveData(addr, newData);
                 }
@@ -76,12 +76,12 @@
         {
             if (this.isInRaid)
             {
-                if (!this.hds.Any())
+                if (!this.hardDrives.Any())
                 {
                     throw new OutOfMemoryException("No hard drive in the RAID array!");
                 }
 
-                return this.hds.First().LoadData(address);
+                return this.hardDrives.First().LoadData(address);
             }
             if (true)
             {
@@ -89,4 +89,5 @@
             }
         }
     }
+
 }

@@ -1,5 +1,5 @@
 Design pattern: Simple Factory
-	* 
+	* In manufacturer creates diferent type of AbstractComputersFactory based on given string
 
 Design pattern: Strategy
 	* 
@@ -8,7 +8,7 @@ Design pattern: Template Method
 	* 
 
 Design pattern: Abstract factory
-	* 
+	* Introduces Abstract Factory as a base class for DellFactory and HpFactory
 
 Design pattern: Composite
 	* 
@@ -21,21 +21,26 @@ Found bottlenecks:
 	* 
 
 Found bugs:
-	* 
+	* Doesn't write invalid command!
 	* 
 	* 
 
 Single responsibility principle
-	* 
+	* All classes have single responsibility. For example Dell and Hp factories create dell and hp computers;
+	* Laptop, Server, PC are separate classes
 
 Open/closed principle
-	* 
+	* The ram memory can be interchanged by the client without touching the original code
+	* The laptop battery can be interchanged by the client without touching the original code
 
 Liskov substitution principle
-	* 
+	* All inheritants can be used instead of their parent without problems
+	* All classes are interchanged without problems
 
 Interface segregation principle
-	* 
+	* All interfaces are small and well-defined
 
 Dependency inversion principle
-	* 
+	* Computer ram should be passed in Computer.ctor()
+	* Laptop expects ILaptopBattery which gives us the possibillity of defining own ILaptopBattery
+	* Cpu.AttachTo expects interfaces which is used in SqureNumberShouldOutputCorrectValues

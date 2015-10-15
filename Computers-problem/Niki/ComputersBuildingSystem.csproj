@@ -46,7 +46,6 @@
   <ItemGroup>
     <Compile Include="Components\MotherBoard.cs" />
     <Compile Include="Components\VideoCard.cs" />
-    <Compile Include="ComputerFactory.cs" />
     <Compile Include="DeliveryCompany.cs" />
     <Compile Include="Factories\AbstractComputersFactory.cs" />
     <Compile Include="Computers\AbstractComputer.cs" />
@@ -55,14 +54,16 @@
     <Compile Include="Computers\Server.cs" />
     <Compile Include="Factories\DellFactory.cs" />
     <Compile Include="Factories\HpFactory.cs" />
+    <Compile Include="Factories\LenovoFactory.cs" />
     <Compile Include="IComputersFactory.cs" />
     <Compile Include="ComputerType.cs" />
     <Compile Include="Components\Computer.cs" />
     <Compile Include="Components\Cpu.cs" />
     <Compile Include="Components\HardDrive.cs" />
     <Compile Include="IMotherboard.cs" />
-    <Compile Include="Components\LaptopBattery.cs" />
+    <Compile Include="Components\LaptopBatteryReal.cs" />
     <Compile Include="Components\Ram.cs" />
+    <Compile Include="InvalidArgumentException.cs" />
     <Compile Include="Program.cs">
       <ExcludeFromStyleCop>False</ExcludeFromStyleCop>
     </Compile>

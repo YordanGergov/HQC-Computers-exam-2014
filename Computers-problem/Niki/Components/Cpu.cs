@@ -4,7 +4,7 @@
     using System;
     using Components;
 
-    internal class Cpu
+    public class Cpu
     {
         private static readonly Random Random = new Random();
         private readonly byte numberOfBits;
@@ -33,6 +33,10 @@
             {
                 this.SquareNumber64();
             }
+            if (this.numberOfBits == 128)
+            {
+                this.SquareNumber128();
+            }
         }
 
         private void SquareNumber32()
@@ -59,6 +63,17 @@
             this.SquareNumberCalculation(data);
         }
 
+        private void SquareNumber128()
+        {
+            var data = this.ram.LoadValue();
+            if (data > 2000)
+            {
+                this.videoCard.Draw("Number too high.");
+                return;
+            }
+
+            this.SquareNumberCalculation(data);
+        }
         public void SquareNumberCalculation(int data)
         {
             if (data < 0)

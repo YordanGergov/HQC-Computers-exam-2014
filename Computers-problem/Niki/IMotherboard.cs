@@ -10,7 +10,7 @@ namespace Computers.UI.Console
 {
 
     /// <summary>
-    ///     The IMotherboard interface
+    ///     Represents motherboard functionality
     /// </summary>
     public interface IMotherboard
     {
@@ -21,7 +21,7 @@ namespace Computers.UI.Console
         int LoadRamValue();
 
         /// <summary>
-        ///     The method for loading ram
+        ///     The method for saving ram
         /// </summary>
         /// <param name="value">The int to save</param>
         void SaveRamValue(int value);
@@ -29,7 +29,7 @@ namespace Computers.UI.Console
         /// <summary>
         ///     The method for drawing on video card
         /// </summary>
-        /// <param name="data">The string to draw</param>
+        /// <param name="data">The string/text to draw</param>
         void DrawOnVideoCard(string data);
     }
 
