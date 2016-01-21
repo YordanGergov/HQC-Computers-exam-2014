@@ -1,6 +1,5 @@
 ﻿namespace Computers.UI.Console
 {
-
     public class LaptopBatteryReal
     {
         private const int InitialPercentage = 50;
@@ -19,11 +18,11 @@
             {
                 this.CurrentChargePercentage = 100;
             }
+
             if (this.CurrentChargePercentage < 0)
             {
                 this.CurrentChargePercentage = 0;
             }
         }
     }
-
 }

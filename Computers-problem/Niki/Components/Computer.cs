@@ -1,6 +1,5 @@
 ﻿namespace Computers.UI.Console
 {
-
     using System.Collections.Generic;
     using Components;
 
@@ -8,8 +7,7 @@
     {
         private readonly LaptopBatteryReal battery;
 
-        internal Computer(ComputerType type, Cpu cpu, Ram ram, IEnumerable<HardDrive> hardDrives, VideoCard videoCard,
-            LaptopBatteryReal battery)
+        internal Computer(ComputerType type, Cpu cpu, Ram ram, IEnumerable<HardDrive> hardDrives, VideoCard videoCard, LaptopBatteryReal battery)
         {
             this.Cpu = cpu;
             this.Ram = ram;
@@ -34,5 +32,4 @@
 
         private Ram Ram { get; set; }
     }
-
 }

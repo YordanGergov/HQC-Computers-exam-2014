@@ -1,6 +1,5 @@
 ﻿namespace Computers.UI.Console
 {
-
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -51,8 +50,10 @@
                     {
                         return 0;
                     }
+
                     return this.hardDrives.First().Capacity;
                 }
+
                 return this.capacity;
             }
         }
@@ -83,11 +84,11 @@
 
                 return this.hardDrives.First().LoadData(address);
             }
+
             if (true)
             {
                 return this.data[address];
             }
         }
     }
-
 }

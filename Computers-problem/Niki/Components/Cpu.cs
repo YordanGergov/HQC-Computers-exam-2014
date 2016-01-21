@@ -1,6 +1,5 @@
 ﻿namespace Computers.UI.Console
 {
-
     using System;
     using Components;
 
@@ -23,20 +22,46 @@
 
         private byte NumberOfCores { get; set; }
 
+        public void SquareNumberCalculation(int data)
+        {
+            if (data < 0)
+            {
+                this.videoCard.Draw("Number too low.");
+            }
+            else
+            {
+                var result = (int)Math.Pow(data, 2);
+                this.videoCard.Draw(string.Format("Square of {0} is {1}.", data, result));
+            }
+        }
+
         public void SquareNumber()
         {
             if (this.numberOfBits == 32)
             {
                 this.SquareNumber32();
             }
+
             if (this.numberOfBits == 64)
             {
                 this.SquareNumber64();
             }
+
             if (this.numberOfBits == 128)
             {
                 this.SquareNumber128();
             }
+        }
+
+        internal void Rand(int a, int b)
+        {
+            int randomNumber;
+            do
+            {
+                randomNumber = Random.Next(0, 1000);
+            }
+            while (!(randomNumber >= a && randomNumber <= b));
+            this.ram.SaveValue(randomNumber);
         }
 
         private void SquareNumber32()
@@ -74,29 +99,5 @@
 
             this.SquareNumberCalculation(data);
         }
-        public void SquareNumberCalculation(int data)
-        {
-            if (data < 0)
-            {
-                this.videoCard.Draw("Number too low.");
-            }
-            else
-            {
-                var result = (int) Math.Pow(data, 2);
-                this.videoCard.Draw(string.Format("Square of {0} is {1}.", data, result));
-            }
-        }
-
-        internal void Rand(int a, int b)
-        {
-            int randomNumber;
-            do
-            {
-                randomNumber = Random.Next(0, 1000);
-            }
-            while (!(randomNumber >= a && randomNumber <= b));
-            this.ram.SaveValue(randomNumber);
-        }
     }
-
 }

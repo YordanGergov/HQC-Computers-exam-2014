@@ -1,6 +1,5 @@
 ﻿namespace Computers.UI.Console.Computers
 {
-
     using System.Collections.Generic;
     using Components;
 
@@ -22,5 +21,4 @@
 
         protected Cpu Cpu { get; set; }
     }
-
 }

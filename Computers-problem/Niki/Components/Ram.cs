@@ -1,6 +1,5 @@
 ﻿namespace Computers.UI.Console
 {
-
     public class Ram
     {
         private int value;
@@ -22,5 +21,4 @@
             return this.value;
         }
     }
-
 }

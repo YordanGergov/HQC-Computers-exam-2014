@@ -1,6 +1,5 @@
 ﻿namespace Computers.UI.Console.Components
 {
-
     using System;
 
     public class MotherBoard : IMotherboard
