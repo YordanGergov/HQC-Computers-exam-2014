@@ -21,5 +21,4 @@
             this.VideoCard.Draw(string.Format("Battery status: {0}", this.laptopBatery.CurrentChargePercentage));
         }
     }
-
 }
